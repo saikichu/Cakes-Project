@@ -1,0 +1,87 @@
+### all cakes list api 
+GET http://127.0.0.1:8000/cakes/
+#Authorization: Basic admin admin
+
+
+### Creating a cake
+POST http://127.0.0.1:8000/cakes/
+#Authorization: Basic admin admin
+#Authorization: Token e61c2bad9016a48936bb273d86886c8eadd39349
+Authorization: Bearer e61c2bad9016a48936bb273d86886c8eadd39349
+Content-Type: multipart/form-data; boundary=abc
+
+--abc
+Content-Disposition: form-data; name="name"
+
+Chocolate Truffle Cake
+--abc
+Content-Disposition: form-data; name="description"
+
+A delicious chocolate cake
+--abc
+Content-Disposition: form-data; name="photo"; filename="image.jpg"
+Content-Type: image/jpeg
+
+< C:\Users\kichu\Downloads\Cake project\image.jpg
+--abc
+Content-Disposition: form-data; name="category"
+
+1
+--abc
+Content-Disposition: form-data; name="shape"
+
+1
+--abc
+Content-Disposition: form-data; name="weight"
+
+1
+--abc
+Content-Disposition: form-data; name="price"
+
+500
+--abc--
+### cake retrieve api
+GET http://127.0.0.1:8000/cakes/1/
+
+
+### updating a cake
+PATCH  http://127.0.0.1:8000/cakes/1/
+Authorization: Basic admin admin
+Content-Type: multipart/form-data; boundary=abc
+
+--abc
+Content-Disposition: form-data; name="name"
+
+WHITE FOREST Cake
+--abc--
+
+### cake delete api
+DELETE http://127.0.0.1:8000/cakes/1/
+Authorization: Basic admin admin    
+
+
+###login api
+
+POST http://127.0.0.1:8000/login/
+Content-Type:  application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+
+
+
+
+###Register api
+
+POST http://127.0.0.1:8000/register/
+Content-Type: application/json
+
+{
+    "username": "saisai111@mailinator.com",
+    "first_name": "saikichu",
+    "role": "User",
+    "password": "Sai123"
+}
