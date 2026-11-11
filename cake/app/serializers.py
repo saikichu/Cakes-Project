@@ -30,11 +30,13 @@ class WeightSerializer(serializers.ModelSerializer):
 class CakeSerializer(serializers.ModelSerializer):
 
     category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all())
+
     shape = serializers.PrimaryKeyRelatedField(queryset=Shape.objects.all())
+
     weight = serializers.PrimaryKeyRelatedField(queryset=Weight.objects.all())
 
     class Meta:
-
+        
         model = Cake
 
         fields = '__all__'
